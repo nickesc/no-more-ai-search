@@ -1,46 +1,77 @@
-# Google AI Overviews Blocker
+
+<div align="center">
+  <a href="https://github.com/nickesc/no-more-ai-search"><img alt="Source: Github" src="https://img.shields.io/badge/source-github-brightgreen?style=for-the-badge&logo=github&labelColor=%23505050&color=brightgreen"></a>
+  <a href="https://github.com/nickesc/no-more-ai-search/actions/workflows/publish-extension.yml"><img alt="Tests: github.com/nickesc/no-more-ai-search/actions/workflows/publish-extension.yml" src="https://img.shields.io/github/actions/workflow/status/nickesc/no-more-ai-search/publish-extension.yml?logo=github&label=CI/CD&logoColor=white&style=for-the-badge&labelColor=%23505050&color=brightgreen"></a>
+  <br>
+  <!---
+    <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="Chrome: Version" src="https://img.shields.io/chrome-web-store/v/no-more-ai-search?style=for-the-badge&logo=chromewebstore&logoColor=%23e5e5e5&label=Chrome&labelColor=%235987ee&color=%23F0F0F0"></a>
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="Firefox: Version" src="https://img.shields.io/amo/v/no-more-ai-search?style=for-the-badge&logo=firefox&label=Firefox&labelColor=%236e008b&color=%23F0F0F0"></a>
+  -->
+</div>
+
+<br>
+
+<div align="center" >
+  <img alt="No More AI Search Logo" src="docs/logo.svg" width="180">
+</div>
+
+<h3 align="center">
+  No More AI Search
+</h3>
+
+<h6 align="center">
+  forked by <a href="https://github.com/nickesc">nickesc</a><br>created by <a href="https://github.com/zbarnz">zbarnz</a>
+</h6>
+
+<!---
+<div align="center" >
+  <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="FF Store Badge" src="docs/FirefoxBadge.svg" height="50"></a>
+</div>
+-->
 
 ## Overview
 
-Google AI Overviews Blocker is a browser extension that enhances user experience by hiding AI-generated overviews in Google search results. This extension is for you if you prefer a cleaner, more traditional search result page without AI-powered summaries.
+`No More AI Search` is a simple browser extension that removes the 'AI Mode' button and AI Overview from Google Search results.
 
-## Features
+This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, and allows you to enable or disable features with custom settings.
 
-- **Clean Interface**: Automatically hides all AI-generated overviews from Google search results.
-- **User Control**: Offers users more control over the content displayed in their search results.
-- **Easy to Use**: Simple installation and effortless interaction.
+Without `NMAS` | With `NMAS`
+-|-
+![AI search screenshot](docs/img/ai-search.png)|![No AI search screenshot](docs/img/no-ai-search.png)
 
+## Options
+
+Extension options can be accessed with the extension's Toolbar Button or the extension's settings page in `chrome://extensions` or `about:addons` > `No More AI Search` > `Extension Options`/`Preferences`
+
+![NMAS preferences ](docs/options.png)
+
+By checking or unchecking each of the options, you can enable or disable the features you want to use.
+
+<!---
 ## Installation
 
-### From Chrome Web Store
+### Chrome
 
-1. Download the extension from the chrome webstore: [Hide Google AI Overviews](https://chromewebstore.google.com/detail/hide-google-ai-overviews/neibhohkbmfjninidnaoacabkjonbahn)
-2. Add it to your browser by clicking on 'Add to Chrome'.
-3. Once installed, the extension will automatically activate, and you will see AI overviews removed from your search results.
+- Download and install the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/no-more-ai-search)
 
-### From Firefox Web Store
+<a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
 
-1. Download the extension from the firefox Add-ons: [Hide Google AI Overviews](https://addons.mozilla.org/en-US/firefox/addon/hide-google-ai-overviews/)
-2. Add it to your browser by clicking on 'Add to Firefox'.
-3. Once installed, the extension will automatically activate, and you will see AI overviews removed from your search results.
+### Firefox
 
-### Manual Installation (Chrome)
+- Download and install the extension from [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/)
 
-1. Download the latest version of the extension from the [GitHub Releases](https://github.com/zbarnz/Google_AI_Overviews_Blocker/releases/tag/PublishedVersion) page.
-2. Unzip the downloaded file to a desired location on your computer.
-3. Open Chrome and go to `chrome://extensions/`.
-4. Enable Developer Mode by toggling the switch at the top-right corner.
-5. Click 'Load unpacked' and select the directory where you unzipped the extension files.
-6. The extension is now installed manually and will start functioning immediately.
+<a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="FF Store Badge" src="docs/FirefoxBadge.svg" height="50"></a>
 
-## Usage
+### Manual
 
-No configuration is needed. Once installed, AI Overviews Blocker works automatically. You can disable or enable it anytime from the browser extension menu.
+- Download and install the latest version of the extension for your browser from the [Releases](https://github.com/nickesc/no-more-ai-search/releases) page (`.crx` for Chrome, `.xpi` for Firefox).
+-->
 
-## Support
+## Privacy
 
-For support, feature requests, or to report a bug, please visit the [GitHub Issues](https://github.com/zbarnz/Google_AI_Overviews_Blocker/issues) page for the extension.
+`No More AI Search` does not collect or track any data.
 
-### [Follow me on GitHub](https://github.com/zbarnz)
+## License
 
-### [Buy me a Coffee](https://buymeacoffee.com/zbarnz)
+`No More AI Search` is licensed under `The MIT License`. For more information, view the repository's [`LICENSE`](LICENSE) file.
