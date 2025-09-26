@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "No More AI Search",
-  "version": "0.1",
-  "description": "Remove the 'AI Mode' button and AI Overview from Google Search results",
+  "version": "0.2",
+  "description": "Remove the AI Mode button and AI Overview from Google Search results",
   "permissions": ["scripting", "storage"],
   "author": "nickesc",
   "homepage_url": "https://github.com/nickesc/no-more-ai-search",
