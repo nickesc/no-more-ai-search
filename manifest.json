@@ -396,7 +396,7 @@
         "*://*.google.co.zw/search*",
         "*://*.google.cat/search*"
       ],
-      "js": ["content.js"],
+      "js": ["src/content.js"],
       "type": "module",
       "run_at": "document_start"
     }
