@@ -24,7 +24,7 @@ function removeAISections() {
             const mainBody = document.querySelector('div#rcnt');
             const aiText = [...mainBody?.querySelectorAll('h1, h2')].find(e => patterns.some(pattern => pattern.test(e.innerText)));
 
-            var aiOverview = aiText?.closest('div#rso > div'); // AI overview as a search result
+            var aiOverview = aiText?.closest('div.ULSxyf'); // AI overview as a search result
             if (!aiOverview) aiOverview = aiText?.closest('div#rcnt > div'); // AI overview above search results
 
             // Hide AI overview
@@ -38,7 +38,7 @@ function removeAISections() {
             // console.log([...mainBody?.querySelectorAll('h1, h2')].map(e => { return { text: e.innerText, obj: e }}));
             const mainElement = document.querySelector('[role="main"]');
             if (mainElement) {
-                mainElement.style.marginTop = "24px";
+                mainElement.style.marginTop = "12px";
             }
 
             // Remove entries in "People also ask" section if it contains "AI overview"
