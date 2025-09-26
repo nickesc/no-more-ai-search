@@ -36,15 +36,15 @@
 
 This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, and allows you to enable or disable features with custom settings.
 
-Without `NMAS` | With `NMAS`
+Without `No More AI Search` | With `No More AI Search`
 -|-
-![AI search screenshot](docs/img/ai-search.png)|![No AI search screenshot](docs/img/no-ai-search.png)
+![AI search screenshot](docs/ai-search.png)|![No AI search screenshot](docs/no-ai-search.png)
 
 ## Options
 
 Extension options can be accessed with the extension's Toolbar Button or the extension's settings page in `chrome://extensions` or `about:addons` > `No More AI Search` > `Extension Options`/`Preferences`
 
-![NMAS preferences ](docs/options.png)
+![No More AI Search preferences ](docs/options.png)
 
 By checking or unchecking each of the options, you can enable or disable the features you want to use.
 
