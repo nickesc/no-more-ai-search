@@ -23,23 +23,146 @@
             align-items: center;
             gap: 10px;
         }
+
+        label {
+            font-style: italic;
+        }
+
+        input:where([type="checkbox"][role="switch"]) {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+            font-size: inherit;
+            width: 3em;
+            height: 1.5em;
+            box-sizing: content-box;
+            border: 1px solid;
+            border-radius: 1em;
+            vertical-align: text-bottom;
+            margin: auto;
+            color: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input:where([type="checkbox"][role="switch"])::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0.2em;
+            transform: translate(0, -50%);
+            box-sizing: border-box;
+            width: 1em;
+            height: 1em;
+            margin: 0 0.15em;
+            border: 1px solid;
+            border-radius: 50%;
+            background: currentcolor;
+            transition: all 0.3s ease;
+        }
+
+        input:where([type="checkbox"][role="switch"]):checked {
+            background-color: rgb(15, 186, 15);
+        }
+
+        input:where([type="checkbox"][role="switch"]):checked::before {
+            left: 1.55em;
+        }
+
+        input:where([type="checkbox"][role="switch"]):hover::before {
+            left: 0.5em;
+        }
+
+        input:where([type="checkbox"][role="switch"]):checked:hover::before {
+            left: 1.25em;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(1px);
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:disabled:hover {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:active {
+            transform: translateY(1px) scale(0.98);
+            background-color: #004691;
+        }
+
+        button.secondary {
+            background-color: #6c757d;
+        }
+        button.secondary:hover {
+            background-color: #5a6268;
+        }
+        button.secondary:active {
+            background-color: #495057;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
     </style>
   </head>
 
-  <body style="font-family: sans-serif; width: 400px">
+  <body style="font-family: sans-serif; width: 300px">
     <form style="padding-left: 20px;">
-      <h1><img src="../icons/icon-128.png" alt="No More AI Search Logo" style="width: 24px; height: 24px;"> <code>No More AI Search</code></h1>
-      <label>Remove AI Mode buttons: <input type="checkbox" id="enabled" name="enabled"></label>
-      <br>
-      <label>Remove AI Overview: <input type="checkbox" id="overview" name="overview"></label>
+      <h1><img src="../icons/icon-128.png" alt="No More AI Search Logo" style="width: 32px; height: 32px;"> <code>No More AI Search</code></h1>
+      <div class="options">
+        <label for="enabled">Remove AI Mode buttons:</label>
+        <input type="checkbox" id="enabled" name="enabled" role="switch">
+
+        <label for="overview">Remove AI Overview:</label>
+        <input type="checkbox" id="overview" name="overview" role="switch">
+      </div>
+
       <h5>
         Press <code>Save</code> to apply changes.
         <br>
         Press <code>Reset</code> to reset options to their default values.
       </h5>
 
-      <button type="submit">Save</button>
-      <button type="reset">Reset</button>
+      <div class="buttons">
+        <button type="submit">Save</button>
+        <button type="reset" class="secondary">Reset</button>
+      </div>
+
     </form>
 
     <script src="options.js"></script>
