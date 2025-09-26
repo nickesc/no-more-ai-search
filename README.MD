@@ -32,7 +32,7 @@
 
 ## Overview
 
-`No More AI Search` is a simple browser extension that removes the 'AI Mode' button and AI Overview from Google Search results.
+`No More AI Search` is a simple browser extension that removes the AI Mode button and AI Overview from Google Search results.
 
 This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, and allows you to enable or disable features with custom settings.
 
@@ -44,9 +44,10 @@ Without `No More AI Search` | With `No More AI Search`
 
 Extension options can be accessed with the extension's Toolbar Button or the extension's settings page in `chrome://extensions` or `about:addons` > `No More AI Search` > `Extension Options`/`Preferences`
 
-![No More AI Search preferences ](docs/options.png)
-
 By checking or unchecking each of the options, you can enable or disable the features you want to use.
+
+<img alt="No More AI Search preferences" src="docs/options.png" width="300">
+
 
 <!---
 ## Installation
