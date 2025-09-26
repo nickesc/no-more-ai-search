@@ -1,9 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "Hide Google AI Overviews",
-  "version": "1.5",
-  "description": "Hide annoying Google AI Overviews.",
-  "permissions": ["scripting"],
+  "name": "No More AI Search",
+  "shortname": "NMAS",
+  "version": "0.1",
+  "description": "Remove the 'AI Mode' button and AI Overview from Google Search results",
+  "permissions": ["scripting", "storage"],
+  "author": "nickesc",
+  "homepage_url": "https://github.com/nickesc/no-more-ai-search",
+  "developer": {
+    "name": "nickesc",
+    "url": "https://github.com/nickesc/no-more-ai-search"
+  },
   "icons": {
     "16": "icons/strikeAI16.png",
     "48": "icons/strikeAI48.png",
@@ -396,7 +403,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "Google_AI_Overviews_Blocker@zachbarnes.dev",
+      "id": "nmas@nickesc.io",
       "strict_min_version": "58.0"
     },
     "gecko_android": {}
