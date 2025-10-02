@@ -13,10 +13,15 @@ const patterns = [
 ];
 
 function removeAISections() {
-    browserApi.storage.sync.get(["enabled", "overview"],  ({ enabled, overview }) => {
+    browserApi.storage.sync.get(["enabled", "overview", "docs"],  ({ enabled, overview, docs }) => {
         if (enabled === true || enabled === undefined) {
             const searchButtons = document.querySelectorAll('.olrp5b, .plR5qb');
             searchButtons.forEach(element => element.style.display = "none");
+        }
+
+        if (docs === true || docs === undefined) {
+            const docsSidekick = document.querySelectorAll('#docs-sidekick-gen-ai-promo-button-container');
+            docsSidekick.forEach(element => element.style.display = "none");
         }
 
         if (overview === true || overview === undefined) {
