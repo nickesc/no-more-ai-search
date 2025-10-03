@@ -32,9 +32,9 @@
 
 ## Overview
 
-`No More AI Search` is a simple browser extension that attempts to remove AI results from Google Search results. Compatible with Chromium™ and Firefox based web browsers.
+`No More AI Search` is a simple browser extension that attempts to remove AI results from Google Search results and Google Docs™. Compatible with Chromium™ and Firefox based web browsers.
 
-This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, and allows you to enable or disable features with custom settings.
+This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, the AI button in Google Docs™, and allows you to enable or disable features with custom settings.
 
 Without `No More AI Search` | With `No More AI Search`
 -|-
@@ -46,8 +46,9 @@ Extension options can be accessed with the extension's Toolbar Button or the ext
 
 By checking or unchecking each of the options, you can enable or disable the features you want to use:
 
-- Remove AI Mode buttons
-- Remove AI Overview
+- Remove AI Mode buttons from search
+- Remove AI Overview from search
+- Remove AI button from Docs
 
 <img alt="No More AI Search preferences" src="docs/options.png" width="225">
 
@@ -80,7 +81,7 @@ By checking or unchecking each of the options, you can enable or disable the fea
 ## Attribution
 
 - [zbarnz](https://github.com/zbarnz) is the creator of the original [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension.
-- Chrome and Chromium are trademarks of Google LLC. Use of these trademarks is subject to Google Permissions.
+- Chrome, Chromium, and Google Docs are trademarks of Google LLC. Use of these trademarks is subject to Google Permissions.
 - Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries.
 
 
