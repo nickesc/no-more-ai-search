@@ -27,7 +27,7 @@ function removeAISections() {
         if (overview === true || overview === undefined) {
             // each time there's a mutation in the document see if there's an ai overview to hide
             const mainBody = document.querySelector('div#rcnt');
-            const aiText = [...mainBody?.querySelectorAll('h1, h2')].find(e => patterns.some(pattern => pattern.test(e.innerText)));
+            const aiText = [...(mainBody?.querySelectorAll('h1, h2, [role="heading"]') ?? [])].find(e => patterns.some(pattern => pattern.test(e.innerText)));
 
             var aiOverview = aiText?.closest('div.ULSxyf'); // AI overview as a search result
             if (!aiOverview) aiOverview = aiText?.closest('div#rcnt > div'); // AI overview above search results
@@ -39,8 +39,6 @@ function removeAISections() {
             const headerTabs = document.querySelector('div#hdtb-sc > div');
             if (headerTabs) headerTabs.style.paddingBottom = "12px";
 
-            // For debugging
-            // console.log([...mainBody?.querySelectorAll('h1, h2')].map(e => { return { text: e.innerText, obj: e }}));
             const mainElement = document.querySelector('[role="main"]');
             if (mainElement) {
                 mainElement.style.marginTop = "12px";
