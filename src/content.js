@@ -8,8 +8,10 @@ const patterns = [
     /Обзор от ИИ/, // ru
     /AI 摘要/, // zh-TW
     /AI-overzicht/i, // nl
+    /AI-oversigt/i, // da
     /Vista creada con IA/i, // es
     /Přehled od AI/i, // cz
+    /Aperçu IA/i, // fr
 ];
 
 function removeAISections() {
@@ -26,11 +28,12 @@ function removeAISections() {
 
         if (overview === true || overview === undefined) {
             // each time there's a mutation in the document see if there's an ai overview to hide
-            const mainBody = document.querySelector('div#rcnt');
-            const aiText = [...(mainBody?.querySelectorAll('h1, h2, [role="heading"]') ?? [])].find(e => patterns.some(pattern => pattern.test(e.innerText)));
+            const mainBody = document.querySelector('div#rcnt') || document.querySelector('div#center_col');
+            const aiContent = mainBody?.querySelector('[data-async-type="folsrch"], [id^="folsrch"]')
+                || [...(mainBody?.querySelectorAll('h1, h2, [role="heading"]') ?? [])].find(e => patterns.some(pattern => pattern.test(e.innerText)));
 
-            var aiOverview = aiText?.closest('div.ULSxyf'); // AI overview as a search result
-            if (!aiOverview) aiOverview = aiText?.closest('div#rcnt > div'); // AI overview above search results
+            let aiOverview = aiContent?.closest('div.ULSxyf'); // AI overview as a search result
+            if (!aiOverview) aiOverview = aiContent?.closest('div#rso > div, div#rcnt > div, div#center_col > div');
 
             // Hide AI overview
             if (aiOverview) aiOverview.style.display = "none";

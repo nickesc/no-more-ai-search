@@ -5,17 +5,19 @@ const { runInNewContext } = require('node:vm');
 
 const contentScript = readFileSync(`${__dirname}/../src/content.js`, 'utf8');
 
-function runContentScript({ heading = 'h2', aboveResults = false, overview = true, loaded = true } = {}) {
+function runContentScript({ heading = 'h2', text = 'AI Overview', marker, container = 'rcnt', aboveResults = false, resultWrapper = 'div.ULSxyf', overview = true, loaded = true } = {}) {
     const section = { style: {} };
     const aiHeading = {
-        innerText: 'AI Overview',
-        closest: selector => selector === (aboveResults ? 'div#rcnt > div' : 'div.ULSxyf') ? section : null,
+        innerText: text,
+        closest: selector => selector.split(',').map(part => part.trim())
+            .includes(aboveResults ? `div#${container} > div` : resultWrapper) ? section : null,
     };
     const headings = [
         { selector: 'h2', element: { innerText: 'Web results' } },
         { selector: heading, element: aiHeading },
     ];
     const main = {
+        querySelector: selector => marker && selector.split(',').map(part => part.trim()).includes(marker) ? aiHeading : null,
         querySelectorAll: selector => headings
             .filter(node => selector.split(',').map(part => part.trim()).includes(node.selector))
             .map(node => node.element),
@@ -29,7 +31,7 @@ function runContentScript({ heading = 'h2', aboveResults = false, overview = tru
             },
         },
         document: {
-            querySelector: selector => selector === 'div#rcnt' && loaded ? main : null,
+            querySelector: selector => selector === `div#${container}` && loaded ? main : null,
             querySelectorAll: () => [],
         },
         MutationObserver: class {
@@ -60,6 +62,39 @@ test('waits for the results container and handles a later mutation', () => {
 });
 
 test('respects the disabled Overview option', () => {
-    const { section } = runContentScript({ overview: false, heading: '[role="heading"]' });
+    for (const marker of [undefined, '[data-async-type="folsrch"]', '[id^="folsrch"]']) {
+        const { section } = runContentScript({ overview: false, heading: '[role="heading"]', marker });
+        assert.equal(section.style.display, undefined);
+    }
+});
+
+test('hides AI markers before headings appear on desktop and mobile', () => {
+    for (const container of ['rcnt', 'center_col']) {
+        for (const marker of ['[data-async-type="folsrch"]', '[id^="folsrch"]']) {
+            const { section } = runContentScript({ heading: null, marker, container, aboveResults: true });
+            assert.equal(section.style.display, 'none');
+        }
+    }
+});
+
+test('keeps the heading fallback on mobile without early markers', () => {
+    const { section } = runContentScript({ heading: '[role="heading"]', container: 'center_col', aboveResults: true });
+    assert.equal(section.style.display, 'none');
+});
+
+test('recognizes French and Danish headings', () => {
+    for (const text of ['Aperçu IA', 'AI-oversigt']) {
+        const { section } = runContentScript({ text, heading: '[role="heading"]' });
+        assert.equal(section.style.display, 'none');
+    }
+});
+
+test('hides the individual result when an early marker has no ULSxyf wrapper', () => {
+    const { section } = runContentScript({ heading: null, marker: '[data-async-type="folsrch"]', resultWrapper: 'div#rso > div' });
+    assert.equal(section.style.display, 'none');
+});
+
+test('leaves ordinary headings alone', () => {
+    const { section } = runContentScript({ text: 'Swimming lessons', heading: '[role="heading"]' });
     assert.equal(section.style.display, undefined);
 });
