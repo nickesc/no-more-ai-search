@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/nickesc/no-more-ai-search"><img alt="Source: Github" src="https://img.shields.io/badge/source-github-brightgreen?style=for-the-badge&logo=github&labelColor=%23505050&color=brightgreen"></a>
-  <a href="https://github.com/nickesc/no-more-ai-search/actions/workflows/publish-extension.yml"><img alt="Tests: github.com/nickesc/no-more-ai-search/actions/workflows/publish-extension.yml" src="https://img.shields.io/github/actions/workflow/status/nickesc/no-more-ai-search/publish-extension.yml?logo=github&label=CI/CD&logoColor=white&style=for-the-badge&labelColor=%23505050&color=brightgreen"></a>
+  <a href="https://github.com/nickesc/no-more-ai-search/actions/workflows/test.yml"><img alt="Tests: github.com/nickesc/no-more-ai-search/actions/workflows/test.yml" src="https://img.shields.io/github/actions/workflow/status/nickesc/no-more-ai-search/test.yml?logo=github&label=Tests&logoColor=white&style=for-the-badge&labelColor=%23505050&color=brightgreen"></a>
   <br>
   <!---
     <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="Chrome: Version" src="https://img.shields.io/chrome-web-store/v/no-more-ai-search?style=for-the-badge&logo=chromewebstore&logoColor=%23e5e5e5&label=Chrome&labelColor=%235987ee&color=%23F0F0F0"></a>
