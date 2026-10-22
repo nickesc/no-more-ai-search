@@ -33,7 +33,7 @@
 
 `No More AI Search` is a simple browser extension that attempts to remove AI results from Google Search results and Google Docs™. Compatible with Chromium™ and Firefox based web browsers.
 
-This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, the AI button in Google Docs™, and allows you to enable or disable features with custom settings.
+This extension is based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, the AI button in Google Docs™, and allows you to enable or disable features with custom settings.
 
 | Without `No More AI Search`                 | With `No More AI Search`                          |
 | ------------------------------------------- | ------------------------------------------------- |
