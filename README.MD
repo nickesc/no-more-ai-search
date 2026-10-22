@@ -52,6 +52,8 @@ Download `no-more-ai-search-<version>.zip` from the [latest release](https://git
 
 ### Firefox (temporary)
 
+Requires Firefox 140 or later on desktop, or Firefox 142 or later on Android.
+
 1. Open `about:debugging` and select **This Firefox**.
 2. Click **Load Temporary Add-on**.
 3. Select `manifest.json` in the extracted folder.

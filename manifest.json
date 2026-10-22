@@ -421,8 +421,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "no-more-ai-search@nickesc.io",
-      "strict_min_version": "58.0"
+      "strict_min_version": "140.0",
     },
-    "gecko_android": {}
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
   }
 }
