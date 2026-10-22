@@ -100,7 +100,7 @@ By checking or unchecking each of the options, you can enable or disable the fea
 ## Attribution
 
 - [zbarnz](https://github.com/zbarnz) is the creator of the original [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension.
-- Chrome, Chromium, and Google Docs are trademarks of Google LLC. Use of these trademarks is subject to Google Permissions.
+- Chrome, Chromium, and Google Docs are trademarks of Google LLC. Use of these trademarks is subject to Google Permissions. `No More AI Search` is not affiliated with, endorsed by, or sponsored by Google.
 - Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries.
 
 ## License
