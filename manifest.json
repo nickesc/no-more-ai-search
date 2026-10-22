@@ -3,7 +3,7 @@
   "name": "No More AI Search",
   "version": "0.2",
   "description": "Remove the AI Mode button and AI Overview from Google Search results",
-  "permissions": ["scripting", "storage"],
+  "permissions": ["storage"],
   "author": "nickesc",
   "homepage_url": "https://github.com/nickesc/no-more-ai-search",
   "developer": {
@@ -414,7 +414,6 @@
         "*://*.google.cat/*"
       ],
       "js": ["src/content.js"],
-      "type": "module",
       "run_at": "document_start"
     }
   ],
