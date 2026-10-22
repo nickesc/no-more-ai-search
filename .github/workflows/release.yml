@@ -65,7 +65,15 @@ jobs:
                   VERSION: ${{ steps.version.outputs.version }}
               run: |
                   mkdir -p dist
-                  zip -r "dist/no-more-ai-search-${VERSION}.zip" manifest.json icons src LICENSE
+                  zip -r "dist/no-more-ai-search-${VERSION}.zip" manifest.json icons src LICENSE -x '*/.*'
+
+            - name: Validate the release package
+              if: steps.version.outputs.new == 'true'
+              env:
+                  VERSION: ${{ steps.version.outputs.version }}
+              run: |
+                  unzip -q "dist/no-more-ai-search-${VERSION}.zip" -d "$RUNNER_TEMP/extension"
+                  npx --yes web-ext@10.8.0 lint --source-dir "$RUNNER_TEMP/extension" --warnings-as-errors
 
             - name: Publish the release
               if: steps.version.outputs.new == 'true'

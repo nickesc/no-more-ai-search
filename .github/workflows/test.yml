@@ -14,3 +14,5 @@ jobs:
         with:
           node-version: '24'
       - run: node --test tests/content.test.cjs
+      - name: Validate extension
+        run: npx --yes web-ext@10.8.0 lint --warnings-as-errors --ignore-files 'tests/**' 'docs/**' 'design/**'
