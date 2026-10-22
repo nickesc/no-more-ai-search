@@ -95,7 +95,7 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 ## Privacy
 
-`No More AI Search` does not collect or track any data.
+`No More AI Search` reads the current page to hide AI features. It does not collect any data.
 
 ## Attribution
 
