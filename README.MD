@@ -39,9 +39,9 @@ This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google
 | ------------------------------------------- | ------------------------------------------------- |
 | ![AI search screenshot](docs/ai-search.png) | ![No AI search screenshot](docs/no-ai-search.png) |
 
-## Install as an unpacked extension
+## Install
 
-Download this repository using **Code > Download ZIP** on [GitHub](https://github.com/nickesc/no-more-ai-search) and extract it, or clone it with Git. No build step is required.
+Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
 
 ### Chrome
 

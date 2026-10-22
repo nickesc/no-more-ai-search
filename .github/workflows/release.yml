@@ -1,0 +1,79 @@
+name: Release
+
+on:
+    push:
+        branches: [main]
+
+permissions:
+    contents: write
+
+concurrency:
+    group: release
+    cancel-in-progress: false
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: "24"
+
+            - name: Check for a new version
+              id: version
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  version=$(node -p "require('./manifest.json').version")
+                  if [[ ! "$version" =~ ^[0-9]+(\.[0-9]+){0,3}$ ]]; then
+                    echo "::error::Invalid extension version."
+                    exit 1
+                  fi
+                  tag="v${version}"
+                  echo "version=${version}" >> "$GITHUB_OUTPUT"
+
+                  gh api --paginate "repos/${GITHUB_REPOSITORY}/releases?per_page=100" \
+                    --jq '.[] | select(.draft == false) | .tag_name' > "$RUNNER_TEMP/release-tags"
+                  if grep -Fxq "$tag" "$RUNNER_TEMP/release-tags"; then
+                    echo "${tag} is already released; nothing to do."
+                    echo "new=false" >> "$GITHUB_OUTPUT"
+                    exit 0
+                  fi
+
+                  if git show-ref --verify --quiet "refs/tags/${tag}"; then
+                    tag_commit=$(git rev-parse "refs/tags/${tag}^{commit}")
+                    if [[ "$tag_commit" != "$GITHUB_SHA" ]]; then
+                      echo "::error::${tag} already points to another commit."
+                      exit 1
+                    fi
+                  fi
+
+                  echo "Releasing ${tag}."
+                  echo "new=true" >> "$GITHUB_OUTPUT"
+
+            - name: Run tests
+              if: steps.version.outputs.new == 'true'
+              run: node --test tests/content.test.cjs
+
+            - name: Zip the extension
+              if: steps.version.outputs.new == 'true'
+              env:
+                  VERSION: ${{ steps.version.outputs.version }}
+              run: |
+                  mkdir -p dist
+                  zip -r "dist/no-more-ai-search-${VERSION}.zip" manifest.json icons src LICENSE
+
+            - name: Publish the release
+              if: steps.version.outputs.new == 'true'
+              env:
+                  GH_TOKEN: ${{ github.token }}
+                  VERSION: ${{ steps.version.outputs.version }}
+              run: |
+                  gh release create "v${VERSION}" "dist/no-more-ai-search-${VERSION}.zip" \
+                    --target "$GITHUB_SHA" --title "No More AI Search ${VERSION}" \
+                    --generate-notes \
+                    --notes 'Extract the attached ZIP, then select its folder using **Load unpacked** on `chrome://extensions` with **Developer mode** enabled.'
