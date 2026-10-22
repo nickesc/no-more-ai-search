@@ -1,4 +1,3 @@
-
 <div align="center">
   <a href="https://github.com/nickesc/no-more-ai-search"><img alt="Source: Github" src="https://img.shields.io/badge/source-github-brightgreen?style=for-the-badge&logo=github&labelColor=%23505050&color=brightgreen"></a>
   <a href="https://github.com/nickesc/no-more-ai-search/actions/workflows/publish-extension.yml"><img alt="Tests: github.com/nickesc/no-more-ai-search/actions/workflows/publish-extension.yml" src="https://img.shields.io/github/actions/workflow/status/nickesc/no-more-ai-search/publish-extension.yml?logo=github&label=CI/CD&logoColor=white&style=for-the-badge&labelColor=%23505050&color=brightgreen"></a>
@@ -36,9 +35,29 @@
 
 This extension is largely based on [zbarnz's](https://github.com/zbarnz) [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension. This version also blocks the AI Mode button in the Google Search toolbar, the AI button in Google Docs™, and allows you to enable or disable features with custom settings.
 
-Without `No More AI Search` | With `No More AI Search`
--|-
-![AI search screenshot](docs/ai-search.png)|![No AI search screenshot](docs/no-ai-search.png)
+| Without `No More AI Search`                 | With `No More AI Search`                          |
+| ------------------------------------------- | ------------------------------------------------- |
+| ![AI search screenshot](docs/ai-search.png) | ![No AI search screenshot](docs/no-ai-search.png) |
+
+## Install as an unpacked extension
+
+Download this repository using **Code > Download ZIP** on [GitHub](https://github.com/nickesc/no-more-ai-search) and extract it, or clone it with Git. No build step is required.
+
+### Chrome
+
+1. Open `chrome://extensions`.
+2. Turn on **Developer mode**.
+3. Click **Load unpacked**.
+4. Select the extracted folder.
+
+### Firefox (temporary)
+
+1. Open `about:debugging` and select **This Firefox**.
+2. Click **Load Temporary Add-on**.
+3. Select `manifest.json` in the extracted folder.
+4. Refresh any open Google Search or Google Docs tabs to apply the extension.
+
+Firefox removes temporary extensions when it restarts, so you'll need to do this again when it restarts.
 
 ## Options
 
@@ -51,7 +70,6 @@ By checking or unchecking each of the options, you can enable or disable the fea
 - Remove AI button from Docs
 
 <img alt="No More AI Search preferences" src="docs/options.png" width="225">
-
 
 <!---
 ## Installation
@@ -77,13 +95,11 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 `No More AI Search` does not collect or track any data.
 
-
 ## Attribution
 
 - [zbarnz](https://github.com/zbarnz) is the creator of the original [Google AI Overview Blocker](https://github.com/zbarnz/Google_AI_Overviews_Blocker) extension.
 - Chrome, Chromium, and Google Docs are trademarks of Google LLC. Use of these trademarks is subject to Google Permissions.
 - Firefox is a trademark of the Mozilla Foundation in the U.S. and other countries.
-
 
 ## License
 
