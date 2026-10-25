@@ -16,7 +16,9 @@ function saveOptions(e) {
         docs: document.querySelector("#docs").checked,
     }
 
-    browserApi.storage.sync.set(options);
+    browserApi.storage.sync.set(options, () => {
+        document.querySelector("#reload-hint").hidden = Object.values(options).every(Boolean);
+    });
 }
 
 function restoreOptions() {
