@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "No More AI Search",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Remove the AI Mode button and AI Overview from Google Search results",
   "permissions": ["storage"],
   "author": "nickesc",
