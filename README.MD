@@ -2,10 +2,8 @@
   <a href="https://github.com/nickesc/no-more-ai-search"><img alt="Source: Github" src="https://img.shields.io/badge/source-github-brightgreen?style=for-the-badge&logo=github&labelColor=%23505050&color=brightgreen"></a>
   <a href="https://github.com/nickesc/no-more-ai-search/actions/workflows/test.yml"><img alt="Tests: github.com/nickesc/no-more-ai-search/actions/workflows/test.yml" src="https://img.shields.io/github/actions/workflow/status/nickesc/no-more-ai-search/test.yml?logo=github&label=Tests&logoColor=white&style=for-the-badge&labelColor=%23505050&color=brightgreen"></a>
   <br>
-  <!---
-    <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="Chrome: Version" src="https://img.shields.io/chrome-web-store/v/no-more-ai-search?style=for-the-badge&logo=chromewebstore&logoColor=%23e5e5e5&label=Chrome&labelColor=%235987ee&color=%23F0F0F0"></a>
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="Firefox: Version" src="https://img.shields.io/amo/v/no-more-ai-search?style=for-the-badge&logo=firefox&label=Firefox&labelColor=%236e008b&color=%23F0F0F0"></a>
-  -->
+  <a href="https://chromewebstore.google.com/detail/no-more-ai-search/hhbcbmpgiidebgicafkjgehgkclfpopc"><img alt="Chrome: Version" src="https://img.shields.io/chrome-web-store/v/hhbcbmpgiidebgicafkjgehgkclfpopc?style=for-the-badge&logo=chromewebstore&labelColor=%23505050&color=brightgreen&logoColor=%23fff&label=Chrome"></a>
+  <!--a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="Firefox: Version" src="https://img.shields.io/amo/v/no-more-ai-search?style=for-the-badge&logo=firefox&label=Firefox&labelColor=%236e008b&color=%23F0F0F0"></a-->
 </div>
 
 <br>
