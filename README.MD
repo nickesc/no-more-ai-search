@@ -37,28 +37,6 @@ This extension is based on [zbarnz's](https://github.com/zbarnz) [Google AI Over
 | ------------------------------------------- | ------------------------------------------------- |
 | ![AI search screenshot](docs/ai-search.png) | ![No AI search screenshot](docs/no-ai-search.png) |
 
-## Install
-
-Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
-
-### Chrome
-
-1. Open `chrome://extensions`.
-2. Turn on **Developer mode**.
-3. Click **Load unpacked**.
-4. Select the extracted folder.
-
-### Firefox (temporary)
-
-Requires Firefox 140 or later on desktop, or Firefox 142 or later on Android.
-
-1. Open `about:debugging` and select **This Firefox**.
-2. Click **Load Temporary Add-on**.
-3. Select `manifest.json` in the extracted folder.
-4. Refresh any open Google Search or Google Docs tabs to apply the extension.
-
-Firefox removes temporary extensions when it restarts, so you'll need to do this again when it restarts.
-
 ## Options
 
 Extension options can be accessed with the extension's Toolbar Button or the extension's settings page in `chrome://extensions` or `about:addons` > `No More AI Search` > `Extension Options`/`Preferences`
@@ -71,7 +49,6 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 <img alt="No More AI Search preferences" src="docs/options.png" width="225">
 
-<!---
 ## Installation
 
 ### Chromium™
@@ -79,6 +56,19 @@ By checking or unchecking each of the options, you can enable or disable the fea
 - Download and install the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/no-more-ai-search)
 
 <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
+
+## Install
+
+### Firefox (temporary)
+
+1. Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
+2. Open `about:debugging` and select **This Firefox**.
+3. Click **Load Temporary Add-on**.
+4. Select `manifest.json` in the extracted folder.
+
+Firefox removes temporary extensions when it restarts, so you'll need to do this again when it starts up.
+
+<!---
 
 ### Firefox
 
