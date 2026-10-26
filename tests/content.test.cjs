@@ -1,9 +1,10 @@
 const assert = require('node:assert/strict');
 const { readFileSync } = require('node:fs');
 const { test } = require('node:test');
-const { runInNewContext } = require('node:vm');
+const { createContext, runInContext } = require('node:vm');
 
 const contentScript = readFileSync(`${__dirname}/../src/content.js`, 'utf8');
+const userscript = readFileSync(`${__dirname}/../src/userscript.js`, 'utf8');
 
 function runContentScript({ heading = 'h2', text = 'AI Overview', marker, container = 'rcnt', aboveResults = false, resultWrapper = 'div.ULSxyf', overview = true, loaded = true } = {}) {
     const section = { style: {} };
@@ -23,13 +24,7 @@ function runContentScript({ heading = 'h2', text = 'AI Overview', marker, contai
             .map(node => node.element),
     };
     let onMutation;
-    runInNewContext(contentScript, {
-        chrome: {
-            storage: {
-                sync: { get: (keys, callback) => callback({ overview }) },
-                onChanged: { addListener() {} },
-            },
-        },
+    const context = createContext({
         document: {
             querySelector: selector => selector === `div#${container}` && loaded ? main : null,
             querySelectorAll: () => [],
@@ -39,6 +34,9 @@ function runContentScript({ heading = 'h2', text = 'AI Overview', marker, contai
             observe() {}
         },
     });
+    runInContext(userscript, context);
+    runInContext('options', context).overview = overview;
+    runInContext(contentScript, context);
     return { section, load: () => { loaded = true; onMutation(); } };
 }
 
