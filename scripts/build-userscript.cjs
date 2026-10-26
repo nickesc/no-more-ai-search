@@ -5,11 +5,14 @@ const root = resolve(__dirname, '..');
 const manifest = JSON.parse(readFileSync(resolve(root, 'manifest.json'), 'utf8'));
 const setup = readFileSync(resolve(root, 'src/userscript.js'), 'utf8');
 const content = readFileSync(resolve(root, 'src/content.js'), 'utf8');
+const releaseUrl = `${manifest.homepage_url}/releases/latest/download`;
 const header = [
     '// ==UserScript==',
     `// @name         ${manifest.name}`,
     `// @namespace    ${manifest.homepage_url}`,
     `// @version      ${manifest.version}`,
+    `// @updateURL    ${releaseUrl}/no-more-ai-search.user.js`,
+    `// @downloadURL  ${releaseUrl}/no-more-ai-search.user.js`,
     `// @description  ${manifest.description}`,
     `// @author       ${manifest.author}`,
     '// @license      MIT',

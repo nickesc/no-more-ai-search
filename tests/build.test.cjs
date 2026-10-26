@@ -10,6 +10,9 @@ const userscript = readFileSync(`${__dirname}/../dist/no-more-ai-search.user.js`
 
 test('userscript metadata follows the extension version and domains', () => {
     assert.equal(userscript.match(/^\/\/ @version\s+(.+)$/m)[1], manifest.version);
+    const downloadUrl = `${manifest.homepage_url}/releases/latest/download/no-more-ai-search.user.js`;
+    assert.equal(userscript.match(/^\/\/ @updateURL\s+(.+)$/m)[1], downloadUrl);
+    assert.equal(userscript.match(/^\/\/ @downloadURL\s+(.+)$/m)[1], downloadUrl);
     assert.deepEqual([...userscript.matchAll(/^\/\/ @match\s+(.+)$/gm)].map(match => match[1]), manifest.content_scripts[0].matches);
 });
 
