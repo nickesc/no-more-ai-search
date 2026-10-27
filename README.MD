@@ -57,8 +57,6 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
 
-## Install
-
 ### Firefox (temporary)
 
 1. Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
@@ -68,6 +66,21 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 Firefox removes temporary extensions when it restarts, so you'll need to do this again when it starts up.
 
+### Safari & iOS (userscript)
+
+1. Install [Userscripts](https://apps.apple.com/us/app/userscripts/id1463298887) and enable its Safari extension.
+2. Add the userscript to your Userscripts library:
+   - Desktop extension:
+     1. Open the Userscripts editor and click the **+** button.
+     2. Select **New remote** from the dropdown menu.
+     3. Enter the URL of the userscript: `https://github.com/nickesc/no-more-ai-search/releases/latest/download/no-more-ai-search.user.js`.
+     4. Click **OK** to import the userscript.
+   - iOS:
+     1. Download [`no-more-ai-search.user.js`](https://github.com/nickesc/no-more-ai-search/releases/latest/download/no-more-ai-search.user.js) and save it to your device.
+     2. Move the file to the Userscripts Directory on your device (use the Userscripts app to navigate to it).
+
+All three features are enabled by default. To disable a feature, edit the `options` object near the top of the installed script, save it, and reload the page. Options will need to be reset after each automatic update.
+
 <!---
 
 ### Firefox
@@ -76,9 +89,6 @@ Firefox removes temporary extensions when it restarts, so you'll need to do this
 
 <a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="FF Store Badge" src="docs/FirefoxBadge.svg" height="50"></a>
 
-### Manual
-
-- Download and install the latest version of the extension for your browser from the [Releases](https://github.com/nickesc/no-more-ai-search/releases) page (`.crx` for Chromium™, `.xpi` for Firefox).
 -->
 
 ## Privacy
