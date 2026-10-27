@@ -1,5 +1,3 @@
-const browserApi = chrome ? chrome : browser;
-
 const patterns = [
     /übersicht mit ki/i, // de
     /ai overview/i, // en
@@ -15,7 +13,7 @@ const patterns = [
 ];
 
 function removeAISections() {
-    browserApi.storage.sync.get(["enabled", "overview", "docs"],  ({ enabled, overview, docs }) => {
+    getOptions(({ enabled, overview, docs }) => {
         if (enabled === true || enabled === undefined) {
             const searchButtons = document.querySelectorAll('.olrp5b, .plR5qb');
             searchButtons.forEach(element => element.style.display = "none");
@@ -58,10 +56,6 @@ function removeAISections() {
         }
     });
 }
-
-browserApi.storage.onChanged.addListener((changes, namespace) => {
-    removeAISections();
-  });
 
 const observer = new MutationObserver(() => {
     removeAISections();

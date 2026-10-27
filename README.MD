@@ -2,10 +2,8 @@
   <a href="https://github.com/nickesc/no-more-ai-search"><img alt="Source: Github" src="https://img.shields.io/badge/source-github-brightgreen?style=for-the-badge&logo=github&labelColor=%23505050&color=brightgreen"></a>
   <a href="https://github.com/nickesc/no-more-ai-search/actions/workflows/test.yml"><img alt="Tests: github.com/nickesc/no-more-ai-search/actions/workflows/test.yml" src="https://img.shields.io/github/actions/workflow/status/nickesc/no-more-ai-search/test.yml?logo=github&label=Tests&logoColor=white&style=for-the-badge&labelColor=%23505050&color=brightgreen"></a>
   <br>
-  <!---
-    <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="Chrome: Version" src="https://img.shields.io/chrome-web-store/v/no-more-ai-search?style=for-the-badge&logo=chromewebstore&logoColor=%23e5e5e5&label=Chrome&labelColor=%235987ee&color=%23F0F0F0"></a>
-    <a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="Firefox: Version" src="https://img.shields.io/amo/v/no-more-ai-search?style=for-the-badge&logo=firefox&label=Firefox&labelColor=%236e008b&color=%23F0F0F0"></a>
-  -->
+  <a href="https://chromewebstore.google.com/detail/no-more-ai-search/hhbcbmpgiidebgicafkjgehgkclfpopc"><img alt="Chrome: Version" src="https://img.shields.io/chrome-web-store/v/hhbcbmpgiidebgicafkjgehgkclfpopc?style=for-the-badge&logo=chromewebstore&labelColor=%23505050&color=brightgreen&logoColor=%23fff&label=Chrome"></a>
+  <!--a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="Firefox: Version" src="https://img.shields.io/amo/v/no-more-ai-search?style=for-the-badge&logo=firefox&label=Firefox&labelColor=%236e008b&color=%23F0F0F0"></a-->
 </div>
 
 <br>
@@ -39,28 +37,6 @@ This extension is based on [zbarnz's](https://github.com/zbarnz) [Google AI Over
 | ------------------------------------------- | ------------------------------------------------- |
 | ![AI search screenshot](docs/ai-search.png) | ![No AI search screenshot](docs/no-ai-search.png) |
 
-## Install
-
-Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
-
-### Chrome
-
-1. Open `chrome://extensions`.
-2. Turn on **Developer mode**.
-3. Click **Load unpacked**.
-4. Select the extracted folder.
-
-### Firefox (temporary)
-
-Requires Firefox 140 or later on desktop, or Firefox 142 or later on Android.
-
-1. Open `about:debugging` and select **This Firefox**.
-2. Click **Load Temporary Add-on**.
-3. Select `manifest.json` in the extracted folder.
-4. Refresh any open Google Search or Google Docs tabs to apply the extension.
-
-Firefox removes temporary extensions when it restarts, so you'll need to do this again when it restarts.
-
 ## Options
 
 Extension options can be accessed with the extension's Toolbar Button or the extension's settings page in `chrome://extensions` or `about:addons` > `No More AI Search` > `Extension Options`/`Preferences`
@@ -73,7 +49,6 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 <img alt="No More AI Search preferences" src="docs/options.png" width="225">
 
-<!---
 ## Installation
 
 ### Chromium™
@@ -82,15 +57,38 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 <a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
 
+### Firefox (temporary)
+
+1. Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
+2. Open `about:debugging` and select **This Firefox**.
+3. Click **Load Temporary Add-on**.
+4. Select `manifest.json` in the extracted folder.
+
+Firefox removes temporary extensions when it restarts, so you'll need to do this again when it starts up.
+
+### Safari & iOS (userscript)
+
+1. Install [Userscripts](https://apps.apple.com/us/app/userscripts/id1463298887) and enable its Safari extension.
+2. Add the userscript to your Userscripts library:
+   - Desktop extension:
+     1. Open the Userscripts editor and click the **+** button.
+     2. Select **New remote** from the dropdown menu.
+     3. Enter the URL of the userscript: `https://github.com/nickesc/no-more-ai-search/releases/latest/download/no-more-ai-search.user.js`.
+     4. Click **OK** to import the userscript.
+   - iOS:
+     1. Download [`no-more-ai-search.user.js`](https://github.com/nickesc/no-more-ai-search/releases/latest/download/no-more-ai-search.user.js) and save it to your device.
+     2. Move the file to the Userscripts Directory on your device (use the Userscripts app to navigate to it).
+
+All three features are enabled by default. To disable a feature, edit the `options` object near the top of the installed script, save it, and reload the page. Options will need to be reset after each automatic update.
+
+<!---
+
 ### Firefox
 
 - Download and install the extension from [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/)
 
 <a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="FF Store Badge" src="docs/FirefoxBadge.svg" height="50"></a>
 
-### Manual
-
-- Download and install the latest version of the extension for your browser from the [Releases](https://github.com/nickesc/no-more-ai-search/releases) page (`.crx` for Chromium™, `.xpi` for Firefox).
 -->
 
 ## Privacy

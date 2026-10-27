@@ -57,7 +57,7 @@ jobs:
 
             - name: Run tests
               if: steps.version.outputs.new == 'true'
-              run: node --test tests/content.test.cjs
+              run: node --test tests/*.test.cjs
 
             - name: Zip the extension
               if: steps.version.outputs.new == 'true'
@@ -65,7 +65,11 @@ jobs:
                   VERSION: ${{ steps.version.outputs.version }}
               run: |
                   mkdir -p dist
-                  zip -r "dist/no-more-ai-search-${VERSION}.zip" manifest.json icons src LICENSE -x '*/.*'
+                  zip -r "dist/no-more-ai-search-${VERSION}.zip" manifest.json icons src LICENSE -x '*/.*' 'src/userscript.js'
+
+            - name: Build the userscript
+              if: steps.version.outputs.new == 'true'
+              run: node scripts/build-userscript.cjs
 
             - name: Validate the release package
               if: steps.version.outputs.new == 'true'
@@ -81,7 +85,7 @@ jobs:
                   GH_TOKEN: ${{ github.token }}
                   VERSION: ${{ steps.version.outputs.version }}
               run: |
-                  gh release create "v${VERSION}" "dist/no-more-ai-search-${VERSION}.zip" \
+                  gh release create "v${VERSION}" "dist/no-more-ai-search-${VERSION}.zip" "dist/no-more-ai-search.user.js" \
                     --target "$GITHUB_SHA" --title "No More AI Search ${VERSION}" \
                     --generate-notes \
-                    --notes 'Extract the attached ZIP, then select its folder using **Load unpacked** on `chrome://extensions` with **Developer mode** enabled.'
+                    --notes 'For Chrome, extract the attached ZIP and select its folder using **Load unpacked** on `chrome://extensions` with **Developer mode** enabled. For Safari, install the attached `.user.js` file with Userscripts.'

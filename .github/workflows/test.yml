@@ -13,6 +13,6 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: '24'
-      - run: node --test tests/content.test.cjs
+      - run: node --test tests/*.test.cjs
       - name: Validate extension
-        run: npx --yes web-ext@10.8.0 lint --warnings-as-errors --ignore-files 'tests/**' 'docs/**' 'design/**'
+        run: npx --yes web-ext@10.8.0 lint --warnings-as-errors --ignore-files 'tests/**' 'docs/**' 'design/**' 'scripts/**' 'dist/**' 'src/userscript.js'
