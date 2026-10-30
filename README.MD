@@ -53,18 +53,15 @@ By checking or unchecking each of the options, you can enable or disable the fea
 
 ### Chromium™
 
-- Download and install the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/no-more-ai-search)
+- Download and install the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/no-more-ai-search/hhbcbmpgiidebgicafkjgehgkclfpopc)
 
-<a href="https://chromewebstore.google.com/detail/no-more-ai-search"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
+<a href="https://chromewebstore.google.com/detail/no-more-ai-search/hhbcbmpgiidebgicafkjgehgkclfpopc"><img alt="CW Store Badge" src="docs/ChromeBadge.svg" height="50"></a>
 
-### Firefox (temporary)
+### Firefox
 
-1. Download `no-more-ai-search-<version>.zip` from the [latest release](https://github.com/nickesc/no-more-ai-search/releases/latest) and extract it.
-2. Open `about:debugging` and select **This Firefox**.
-3. Click **Load Temporary Add-on**.
-4. Select `manifest.json` in the extracted folder.
+- Download and install the extension from [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/)
 
-Firefox removes temporary extensions when it restarts, so you'll need to do this again when it starts up.
+<a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="FF Store Badge" src="docs/FirefoxBadge.svg" height="50"></a>
 
 ### Safari & iOS (userscript)
 
@@ -80,16 +77,6 @@ Firefox removes temporary extensions when it restarts, so you'll need to do this
      2. Move the file to the Userscripts Directory on your device (use the Userscripts app to navigate to it).
 
 All three features are enabled by default. To disable a feature, edit the `options` object near the top of the installed script, save it, and reload the page. Options will need to be reset after each automatic update.
-
-<!---
-
-### Firefox
-
-- Download and install the extension from [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/)
-
-<a href="https://addons.mozilla.org/en-US/firefox/addon/no-more-ai-search/"><img alt="FF Store Badge" src="docs/FirefoxBadge.svg" height="50"></a>
-
--->
 
 ## Privacy
 
